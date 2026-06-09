@@ -43,7 +43,7 @@ Upload two telemetry files and compare:
 * Speed traces
 
 Perfect for proving to your teammate that they were definitely slower.
-![alt text](assets/doge.png)
+<img src="assets/doge.png" width="200">
 
 ---
 
