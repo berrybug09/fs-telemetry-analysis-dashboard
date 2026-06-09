@@ -27,9 +27,9 @@ From here, the goal is to slowly add more motorsport-style analysis features whe
 
 ## Dashboard Preview
 
-![alt text](ss1.png)
-![alt text](ss2.png)
-![alt text](ss3.png)
+![Main Dashboard](assets/ss1.png)
+![alt text](assets/ss2.png)
+![alt text](assets/ss3.png)
 
 ---
 
@@ -43,7 +43,7 @@ Upload two telemetry files and compare:
 * Speed traces
 
 Perfect for proving to your teammate that they were definitely slower.
-![alt text](doge.png)
+![alt text](assets/doge.png)
 
 ---
 
