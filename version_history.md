@@ -14,19 +14,28 @@
 
 ---
 
-## v1.1.0 - Corner Analysis (Planned)
+## v1.1.0 - Corner Analysis Update (17 June 2026)
 
-### Planned Features
+### Added
 
-* Corner detection
-* Corner entry speed
+* Track-based corner detection
+* Automatic corner numbering
+* Corner entry speed calculation
 * Apex speed calculation
-* Corner exit speed
-* Corner-by-corner driver comparison
+* Corner exit speed calculation
+* Corner time calculation
+* Track-to-telemetry corner mapping
+* Corner visualization on track map
+
+### Improved
+
+* Circuit-aware analysis
+* Dynamic corner detection for different tracks
+* Improved track visualization
 
 ### Goal
 
-Provide basic race engineering insights instead of only displaying telemetry.
+Move beyond telemetry display and provide race-engineering style corner analysis.
 
 ---
 
@@ -34,14 +43,14 @@ Provide basic race engineering insights instead of only displaying telemetry.
 
 ### Planned Features
 
-* Sector splitting
+* Automatic sector generation
 * Sector times
 * Fastest sector identification
 * Driver sector comparison
 
 ### Goal
 
-Identify where lap time is gained or lost.
+Identify where lap time is gained or lost around the circuit.
 
 ---
 
@@ -52,11 +61,12 @@ Identify where lap time is gained or lost.
 * Speed delta analysis
 * Braking point comparison
 * Throttle application comparison
+* Corner-by-corner driver comparison
 * Automated driver feedback
 
 ### Goal
 
-Turn the dashboard into a driver coaching tool.
+Turn the dashboard into a driver coaching and performance analysis tool.
 
 ---
 
@@ -65,9 +75,9 @@ Turn the dashboard into a driver coaching tool.
 ### Planned Features
 
 * Racing line visualization
-* Speed heatmaps
-* Optimal line estimation
 * GPS trajectory comparison
+* Speed heatmaps
+* Optimal racing line estimation
 
 ### Goal
 
@@ -80,10 +90,14 @@ Introduce vehicle dynamics and racing line optimization concepts.
 ### Possible Future Features
 
 * Real telemetry support
+* AIM data import
+* MoTeC log import
 * CAN log parsing
-* AIM/MoTeC data import
+* Multi-lap analysis
+* Session database
 * Real-time telemetry streaming
 * Live dashboard mode
-* Session database
-* Multi-lap analysis
 * Machine-learning based driver coaching
+
+### End Goal
+Create an open-source motorsport telemetry platform capable of providing race-engineering insights, driver coaching, and performance optimization from uploaded telemetry data.
