@@ -3,14 +3,14 @@ import pandas as pd
 
 np.random.seed(67) #im so funny
 
-time = np.arange(0, 60, 0.1)
+LAP_TIME = 60
+DT = 0.1
+time = np.arange(0, LAP_TIME, DT)
 
 speed = np.zeros_like(time)
 throttle = np.zeros_like(time)
 brake = np.zeros_like(time)
 steering = np.zeros_like(time)
-gps_x = np.zeros_like(time)
-gps_y = np.zeros_like(time)
 
 
 #For this track, every speed starting point is based on the previous cutoff
@@ -62,44 +62,17 @@ for i, t in enumerate(time):
         steering[i] = 18
 
 speed += np.random.normal(0, 1.5, len(speed))
-
-
-#TRACK
-# TODO -  make track less potato shaped :D
-track_points = np.array([
-    [0, 0],      # Go
-    [100, 0],    # Full send straight
-    [140, 40],   # Sweeper
-    [140, 120],  # Hairpin entry
-    [80, 180],   # Hairpin exit
-    [20, 150],   # Back section
-    [-20, 100],  # Chicane entry
-    [20, 60],    # Chicane middle
-    [-20, 20],   # Chicane exit
-    [0, 0]       # Fin
-])
-
-segment_lengths = np.sqrt(np.sum(np.diff(track_points, axis=0)**2, axis=1))
-cumulative_length = np.concatenate(([0], np.cumsum(segment_lengths)))
-
-total_length = cumulative_length[-1]
-
-sample_distance = np.linspace(0, total_length, len(time))
-
-gps_x = np.interp(sample_distance, cumulative_length, track_points[:, 0])
-
-gps_y = np.interp(sample_distance, cumulative_length, track_points[:, 1])
+speed = np.clip(speed, 0, None)
 
 df = pd.DataFrame({
     "Time": time,
     "Speed": speed,
     "Throttle": throttle,
     "Brake": brake,
-    "Steering": steering,
-    "GPS_X": gps_x,
-    "GPS_Y": gps_y
+    "Steering": steering
 })
 
-
-df.to_csv("sample_data/sample_telemetry_b.csv", index=False)
+#To generate more data
+# Change the values in track time enumeration & change this file name to whatever you like
+df.to_csv("sample_data/sample_telemetry.csv", index=False)
 print("Sample telemetry created.")
